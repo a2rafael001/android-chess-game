@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/action_rules"
+        android:title="@string/menu_rules"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/action_about"
+        android:title="@string/menu_about"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/action_compose_demo"
+        android:title="Compose Demo"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/action_contact_author"
+        android:title="@string/main_contact_author"
+        app:showAsAction="never" />
+</menu>

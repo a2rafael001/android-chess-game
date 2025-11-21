@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">ChessLab</string>
+
+    <!-- Common -->
+    <string name="ok">OK</string>
+    <string name="email_hint">Эл. почта</string>
+    <string name="password_hint">Пароль</string>
+
+    <string name="menu_rules">Правила</string>
+    <string name="menu_about">О программе</string>
+
+    <string name="menu_theme">Тема</string>
+    <string name="menu_theme_light">Светлая</string>
+    <string name="menu_theme_dark">Тёмная</string>
+
+    <string name="menu_theme_with_value">Тема: %1$s</string>
+
+    <string name="menu_language">Язык</string>
+    <string name="menu_lang_ru">Русский</string>
+    <string name="menu_lang_en">English</string>
+
+    <string name="menu_language_with_value">Язык: %1$s</string>
+
+
+    <string name="dialog_rules_title">Как не проиграть в шахматы? 🤔</string>
+    <string name="dialog_rules_body">Цель — загнать чужого короля в тупик (но не в гараж).\n\n
+• Пешка — самая трудяга. Идёт вперёд, бьёт по диагонали. Если дойдёт до края — превращается в кого угодно (кроме менеджера по продажам).\n
+• Ладья — как танк, только по прямой.\n
+• Слон — ходит по диагонали. Всегда знает, где правда.\n
+• Конь — прыгает буквой «Г» и игнорирует правила (всех остальных фигур).\n
+• Ферзь — универсальный солдат. И по прямой, и по диагонали.\n
+• Король — главный, но ходит на 1 клетку. Видимо, телохранители не везде успевают.\n
+
+Рокировка — как бэкап: переставь короля и ладью, чтобы было безопаснее.\n
+Взятие на проходе — когда пешка проходит мимо, но её всё равно можно съесть.\n\n
+Чтобы сделать ход — нажми на фигуру, потом на клетку. Удачи, гроссмейстер! 😉</string>
+    <string name="dialog_about_title">О приложении и его таинственном создателе 🧙‍♂️</string>
+    <string name="dialog_about_body">
+Версия %1$s\n\n
+Автор:Арутюнян Рафаэль\n
+Студент КубГУ, ФКТиПМ\n
+Группа: ФИ-42/2\n\n
+Это приложение — результат бессонных ночей,\n
+чашек кофе и попыток понять, как заставить UI выглядеть красиво.\n\n
+Но оно работает! (Вроде бы.)\n
+Если сломается — это фича, а не баг. 🐛\n\n
+— С уважением, программист, который всё ещё не знает, что такое `FLAG_BLUR_BEHIND` 😄
+</string>
+
+    <string name="welcome_title">Добро пожаловать в ChessLab!</string>
+    <string name="welcome_body">
+⚠️ Внимание: шахматы могут вызывать привыкание!\n\n
+ 👤 Войди — и мы будем знать, за кем следить\n
+ 🆕 Зарегистрируйся — и получишь "официальный" статус шахматного бойца\n
+ 👻 Или останься гостем — мы всё равно рады
+</string>
+    <string name="welcome_btn_login">Войти</string>
+    <string name="welcome_btn_register">Создать аккаунт</string>
+    <string name="welcome_btn_guest">Играть как гость</string>
+
+
+
+    <string name="main_toolbar_title">Сыграем партию?</string>
+
+    <string name="menu_settings">Настройки</string>
+
+    <string name="login_auth_error">Неверный логин или пароль</string>
+
+
+    <string name="start_game">Начать партию</string>
+    <string name="main_mode_bot">Играть с ботом</string>
+    <string name="main_mode_friend">Играть с другом</string>
+    <string name="main_mode_online">Онлайн-режим</string>
+    <string name="main_label_board">Доска:</string>
+    <string name="main_rating">Рейтинг игровков</string>
+    <string name="main_label_pieces">Режим:</string>
+    <string name="main_button_restart">Перезапустить</string>
+    <string name="text_stats">Сегодня сыграно партий: %d</string>
+    <string name="text_stat">Сейчас онлайн: %d (демо)</string>
+    <string name="login_button">Войти</string>
+    <string name="login_form_error">Проверьте правильность ввода</string>
+    <string name="login_email_hint">Эл. почта</string>
+    <string name="login_password_hint">Пароль</string>
+    <string name="login_no_account"><u>Нет аккаунта? Зарегистрируйтесь</u></string>
+    <string name="login_error_format">Неверный формат e-mail</string>
+    <string name="login_error_credentials">Неверные данные для входа</string>
+    <string name="login_error_empty_email">Введите e-mail</string>
+    <string name="login_error_empty_password">Введите пароль</string>
+    <string name="login_success">Вы успешно вошли</string>
+
+    <!-- Register -->
+    <string name="register_username_hint">Имя пользователя</string>
+    <string name="register_password_hint">Пароль</string>
+    <string name="register_password_confirm_hint">Подтвердите пароль</string>
+
+    <string name="register_have_account"><u>Уже есть аккаунт?</u></string>
+    <string name="register_passwords_dont_match">Пароли не совпадают</string>
+
+    <!-- RegisterActivity: ошибки валидации -->
+    <string name="error_enter_name">Введите имя</string>
+    <string name="error_enter_email">Введите e-mail</string>
+    <string name="error_bad_email">Неверный формат e-mail</string>
+
+    <string name="error_pass_len">Минимум 8 символов</string>
+    <string name="error_pass_lower">Нужна строчная буква</string>
+    <string name="error_pass_upper">Нужна ПРОПИСНАЯ буква</string>
+    <string name="error_pass_digit">Нужна цифра</string>
+    <string name="error_pass_special">Нужен спецсимвол (%1$s)</string>
+
+    <string name="register_button">Создать аккаунт</string>
+    <string name="register_name_hint">Имя</string>
+    <string name="register_name_helper">Это имя будут видеть другие игроки</string>
+    <string name="register_password_helper">Используйте 8+ символов, с заглавной и строчной буквой, цифрой и спец. символом</string>
+    <string name="register_password_empty_helper">\u0020</string>
+    <string name="register_error_empty_name">Введите имя</string>
+    <string name="register_error_empty_confirm">Подтвердите пароль</string>
+    <string name="register_error_passwords_mismatch">Пароли не совпадают</string>
+    <string name="register_error_email_exists">Этот e-mail уже занят</string>
+    <string name="register_error_save">Ошибка при сохранении</string>
+    <string name="register_success">Аккаунт успешно создан</string>
+    <string name="password_strength_needed">Пароль не соответствует требованиям</string>
+    <string name="register_password_requirements">Требования к паролю:</string>
+    <string name="register_password_need_min_length">Минимум 8 символов</string>
+    <string name="register_password_need_uppercase">1 заглавная буква</string>
+    <string name="register_password_need_lowercase">1 строчная буква</string>
+    <string name="register_password_need_digit">1 цифра</string>
+    <string name="register_password_need_special">1 спец. символ</string>
+    <string name="register_password_need_uppercase_short">A-Z</string>
+    <string name="register_password_need_lowercase_short">a-z</string>
+    <string name="register_password_need_digit_short">0-9</string>
+    <string name="register_password_need_special_short">\@#$</string>
+    <string name="register_password_ok">Отличный пароль</string>
+    <string name="title_activity_settings">Настройки</string>
+    
+    <string-array name="country_entries">
+        <item>Россия</item>
+        <item>США</item>
+        <item>Великобритания</item>
+        <item>Германия</item>
+        <item>Франция</item>
+    </string-array>
+
+
+    <string name="settings_name">Имя пользователя</string>
+    <string name="settings_names">Профиль</string>
+    <string name="settings_from">Страна</string>
+    <string name="settings_avatar">Выбрать аватар</string>
+    <string name="settings_text_avatar">Нажмите, чтобы изменить изображение</string>
+    <string name="settings_voic">Звук</string>
+    <string name="settings_voiic">Фоновая музыка</string>
+    <string name="settings_voiicc">Звуки ходов</string>
+    <string name="settings_mode">Внешний вид</string>
+    <string name="settings_theme">Тема приложения</string>
+    <string name="settings_lounge">Язык</string>
+    <string name="settings_style_dos">Стиль доски</string>
+    <string name="settings_play_proc">Игровой процесс</string>
+    <string name="settings_play_time">Игра на время</string>
+    <string name="settings_show_coordinates">Показывать координаты</string>
+
+
+    <string-array name="country_values">
+        <item>ru</item>
+        <item>us</item>
+        <item>gb</item>
+        <item>de</item>
+        <item>fr</item>
+    </string-array>
+
+    <!-- Game Screen -->
+    <string name="menu_save_game">Сохранить</string>
+    <string name="menu_exit_to_menu">Выйти в меню</string>
+    <string name="menu_return_to_game">Вернуться в игру</string>
+    <string name="btn_hint_description">Подсказка</string>
+    <string name="btn_undo_description">Отмена хода</string>
+    <string name="btn_restart_description">Заново</string>
+    <string name="btn_draw_description">Предложить ничью</string>
+    <string name="dialog_pause_title">Пауза</string>
+    <string name="dialog_pause_message">Хотите выйти из игры?</string>
+
+    <string name="toast_hint_soon">Подсказки появятся скоро!</string>
+    <string name="toast_undo_soon">Отмена хода появится скоро!</string>
+    <string name="toast_draw_soon">Предложение ничьей появится скоро!</string>
+    <string name="toast_save_soon">Сохранение игры появится скоро!</string>
+    <string name="invalid_move">Неверный ход</string>
+    <string name="check">Шах!</string>
+
+    <string name="pawn_promotion_title">Превращение пешки</string>
+    <string-array name="promotion_piece_names">
+        <item>Ферзь</item>
+        <item>Ладья</item>
+        <item>Слон</item>
+        <item>Конь</item>
+    </string-array>
+
+    <string name="game_over_checkmate_title">Шах и мат!</string>
+    <string name="game_over_checkmate_white_wins">Белые выиграли.</string>
+    <string name="game_over_checkmate_black_wins">Черные выиграли.</string>
+    <string name="game_over_stalemate_title">Пат!</string>
+    <string name="game_over_stalemate_body">Ничья.</string>
+    <string name="game_over_new_game">Новая игра</string>
+    <string name="game_over_exit_menu">Выйти в меню</string>
+
+    <string name="logout_dialog_title">Выйти из аккаунта?</string>
+    <string name="online_mode_dialog_title">Онлайн-режим</string>
+    <string name="online_mode_dialog_message">Онлайн-игра появится позже. Сейчас доступны режимы «С ботом» и «С другом».</string>
+    <string name="guest_user_name">Гость</string>
+    <string name="contact_author_subject">Обратная связь по ChessLab</string>
+    <string name="no_email_app_found">Не найдено почтовое приложение</string>
+    <string name="main_contact_author">Связаться с автором</string>
+
+    <string name="settings_profile_disabled_summary">Войдите в аккаунт, чтобы изменить профиль</string>
+    <string name="rating_title">Рейтинг игроков</string>
+    <string name="game_history_title">История игр</string>
+    <string name="opponent">Оппонент</string>
+    <string name="result">Результат</string>
+    <string name="date">Дата</string>
+    <string name="continue_game">Продолжить</string>
+    <string name="game_saved">Игра сохранена</string>
+    <string name="background_image_description">Фон</string>
+
+    <string name="new_game_warning_title">Новая игра?</string>
+    <string name="new_game_warning_message">Новая игра перезапишет ваше сохранение. Вы уверены?</string>
+    <string name="yes">Да</string>
+    <string name="no">Нет</string>
+
+</resources>

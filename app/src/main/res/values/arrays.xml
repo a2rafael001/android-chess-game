@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="theme_entries">
+        <item>Светлая</item>
+        <item>Темная</item>
+
+    </string-array>
+
+    <string-array name="theme_values">
+        <item>light</item>
+        <item>dark</item>
+
+    </string-array>
+
+
+    <string-array name="lang_entries">
+        <item>Русский</item>
+        <item>English</item>
+    </string-array>
+
+    <string-array name="lang_values">
+        <item>ru</item>
+        <item>en</item>
+    </string-array>
+
+
+    <string-array name="board_style_entries">
+        <item>Стандартный</item>
+        <item>Зеленый</item>
+        <item>Синий</item>
+    </string-array>
+
+    <string-array name="board_style_values">
+        <item>default</item>
+        <item>green</item>
+        <item>blue</item>
+    </string-array>
+
+
+    <string-array name="board_themes">
+        <item>Классика</item>
+        <item>Зелёная</item>
+        <item>Синяя</item>
+    </string-array>
+
+
+    <string-array name="piece_sets">
+        <item>Стандартные</item>
+        <item>Современные</item>
+    </string-array>
+
+
+    <string-array name="email_domains">
+        <item>gmail.com</item>
+        <item>yahoo.com</item>
+        <item>outlook.com</item>
+        <item>mail.ru</item>
+        <item>yandex.ru</item>
+    </string-array>
+
+</resources>

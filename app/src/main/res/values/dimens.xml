@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Общие отступы -->
+    <dimen name="screen_padding">24dp</dimen>
+    <dimen name="card_margin">8dp</dimen>
+    <dimen name="card_content_padding">20dp</dimen>
+
+    <!-- Радиусы скругления -->
+    <dimen name="card_corner_radius">20dp</dimen>
+
+    <!-- Размеры элементов -->
+    <dimen name="form_field_spacing">12dp</dimen>
+    <dimen name="button_top_margin">16dp</dimen>
+    <dimen name="max_card_width">420dp</dimen>
+    <dimen name="form_field_height">48dp</dimen>
+
+    <dimen name="main_screen_padding">12dp</dimen>
+    <dimen name="text_size_coordinate">12sp</dimen>
+    <dimen name="coordinate_bar_height">16dp</dimen>
+    <dimen name="coordinate_number_bar_width">20dp</dimen>
+    <dimen name="radio_button_spacing">16dp</dimen>
+    <dimen name="spinner_spacing_start">8dp</dimen>
+    <dimen name="options_group_spacing">24dp</dimen>
+    <dimen name="options_row_padding_top">4dp</dimen>
+    <dimen name="title_large_line_height">28sp</dimen>
+
+</resources>

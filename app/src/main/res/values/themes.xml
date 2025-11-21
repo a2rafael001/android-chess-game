@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="Theme.ChessLab" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/topBar</item>
+        <item name="colorOnPrimary">@android:color/white</item>
+        <item name="colorSecondary">@color/startRed</item>
+        <item name="android:statusBarColor">@color/topBar</item>
+        <item name="android:navigationBarColor">@android:color/black</item>
+    </style>
+
+    <style name="Theme.App" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="android:statusBarColor">@android:color/transparent</item>
+    </style>
+
+    <!-- Тема сплэш-экрана -->
+    <style name="Theme.App.Splash" parent="Theme.SplashScreen">
+        <item name="windowSplashScreenBackground">@color/splash_bg</item>
+        <item name="windowSplashScreenAnimatedIcon">@mipmap/ic_launcher</item>
+        <item name="postSplashScreenTheme">@style/Theme.ChessLab</item>
+    </style>
+
+    <!-- Оверлей применяется ТОЛЬКО к меню тулбара -->
+    <style name="ThemeOverlay.ChessLab.ToolbarPopup" parent="ThemeOverlay.Material3.Dark">
+        <item name="popupMenuStyle">@style/App.PopupMenu.Dark</item>
+    </style>
+
+    <!-- Внешний вид PopupMenu -->
+    <style name="App.PopupMenu.Dark" parent="Widget.Material3.PopupMenu">
+        <item name="android:popupBackground">@drawable/bg_popup_dark</item>
+        <item name="android:textColor">@color/popup_item_text</item>
+        <item name="iconTint">@color/popup_item_text</item>
+    </style>
+
+    <!-- Стили для "стеклянного" диалога -->
+    <style name="ThemeOverlay.ChessLab.DialogGlassDark" parent="ThemeOverlay.Material3.MaterialAlertDialog">
+
+        <item name="colorOnSurface">#FFFFFFFF</item>
+        <item name="android:textColor">#FFFFFFFF</item>
+
+    </style>
+
+    <style name="DialogGlass.Title" parent="TextAppearance.Material3.TitleLarge">
+        <item name="android:textColor">#FFFFFFFF</item>
+    </style>
+
+    <style name="DialogGlass.Body" parent="TextAppearance.Material3.BodyMedium">
+        <item name="android:textColor">#E6FFFFFF</item>
+    </style>
+
+    <style name="DialogGlass.Button" parent="Widget.Material3.Button.TextButton">
+        <item name="android:textColor">#FFFFFFFF</item>
+    </style>
+
+    <style name="DialogGlass.Button.Positive" parent="DialogGlass.Button">
+        <item name="android:textColor">#FF4CAF50</item> <!-- Зелёный цвет для OK -->
+    </style>
+
+    <style name="DialogGlass.Button.Negative" parent="DialogGlass.Button">
+        <item name="android:textColor">#FF9E9E9E</item> <!-- Серый для Cancel -->
+    </style>
+
+    <style name="ThemeOverlay.ChessLab.ForceDarkLabel">
+        <item name="colorOnSurface">@android:color/black</item>
+    </style>
+
+    <style name="ThemeOverlay.ChessLab" parent="ThemeOverlay.ChessLab.ForceDarkLabel" />
+
+    <!-- === СТИЛИ ДЛЯ КООРДИНАТ НА ШАХМАТНОЙ ДОСКЕ === -->
+    <style name="CoordinateBar">
+        <item name="android:gravity">center</item>
+    </style>
+
+    <style name="CoordinateBar.Horizontal" parent="CoordinateBar">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">@dimen/coordinate_bar_height</item>
+        <item name="android:orientation">horizontal</item>
+    </style>
+
+    <style name="CoordinateBar.Vertical" parent="CoordinateBar">
+        <item name="android:layout_height">0dp</item>
+        <item name="android:orientation">vertical</item>
+        <item name="android:baselineAligned">false</item>
+    </style>
+
+    <style name="CoordinateText">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textSize">@dimen/text_size_coordinate</item>
+    </style>
+
+    <style name="CoordinateLetter" parent="CoordinateText" />
+
+    <style name="CoordinateNumber" parent="CoordinateText">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">0dp</item>
+        <item name="android:textColor">@color/coordinate_text_color</item>
+        <item name="android:includeFontPadding">false</item>
+    </style>
+
+</resources>

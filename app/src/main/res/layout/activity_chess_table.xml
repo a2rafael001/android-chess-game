@@ -1,0 +1,281 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?attr/colorSurface"
+    tools:context=".GameActivity">
+
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:layout_alignParentTop="true"
+        android:background="?attr/colorSurfaceVariant">
+
+        <TextView
+            android:id="@+id/game_timer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:textAppearance="@style/TextAppearance.Material3.TitleLarge"
+            android:textColor="?attr/colorOnSurface"
+            tools:text="10:00" />
+
+    </com.google.android.material.appbar.MaterialToolbar>
+
+    <LinearLayout
+        android:id="@+id/opponent_profile"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/toolbar"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:padding="8dp">
+
+        <ImageView
+            android:id="@+id/opponent_avatar"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/ic_launcher_foreground"
+            tools:ignore="ContentDescription" />
+
+        <ImageView
+            android:id="@+id/opponent_flag"
+            android:layout_width="24dp"
+            android:layout_height="16dp"
+            android:layout_marginStart="-12dp"
+            android:layout_marginTop="12dp"
+            tools:src="@drawable/ic_settings_24" 
+            tools:ignore="ContentDescription" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/opponent_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="@style/TextAppearance.Material3.BodyLarge"
+                tools:text="Opponent (1200)" />
+
+            <TextView
+                android:id="@+id/opponent_captured_pieces"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="@style/TextAppearance.Material3.BodySmall"
+                tools:text="♙♙♘" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/board_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/opponent_profile">
+
+        <LinearLayout
+            android:id="@+id/topLetters"
+            style="@style/CoordinateBar.Horizontal"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="@id/boardHolder"
+            app:layout_constraintEnd_toEndOf="@id/boardHolder">
+
+            <TextView style="@style/CoordinateLetter" android:text="A" tools:ignore="HardcodedText" />
+            <TextView style="@style/CoordinateLetter" android:text="B" tools:ignore="HardcodedText" />
+            <TextView style="@style/CoordinateLetter" android:text="C" tools:ignore="HardcodedText" />
+            <TextView style="@style/CoordinateLetter" android:text="D" tools:ignore="HardcodedText" />
+            <TextView style="@style/CoordinateLetter" android:text="E" tools:ignore="HardcodedText" />
+            <TextView style="@style/CoordinateLetter" android:text="F" tools:ignore="HardcodedText" />
+            <TextView style="@style/CoordinateLetter" android:text="G" tools:ignore="HardcodedText" />
+            <TextView style="@style/CoordinateLetter" android:text="H" tools:ignore="HardcodedText" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/bottomLetters"
+            style="@style/CoordinateBar.Horizontal"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="@id/boardHolder"
+            app:layout_constraintEnd_toEndOf="@id/boardHolder">
+
+            <TextView style="@style/CoordinateLetter" android:text="A" tools:ignore="HardcodedText" />
+            <TextView style="@style/CoordinateLetter" android:text="B" tools:ignore="HardcodedText" />
+            <TextView style="@style/CoordinateLetter" android:text="C" tools:ignore="HardcodedText" />
+            <TextView style="@style/CoordinateLetter" android:text="D" tools:ignore="HardcodedText" />
+            <TextView style="@style/CoordinateLetter" android:text="E" tools:ignore="HardcodedText" />
+            <TextView style="@style/CoordinateLetter" android:text="F" tools:ignore="HardcodedText" />
+            <TextView style="@style/CoordinateLetter" android:text="G" tools:ignore="HardcodedText" />
+            <TextView style="@style/CoordinateLetter" android:text="H" tools:ignore="HardcodedText" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/leftNumbers"
+            style="@style/CoordinateBar.Vertical"
+            android:layout_height="0dp"
+            android:layout_width="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/boardHolder"
+            app:layout_constraintBottom_toBottomOf="@id/boardHolder">
+
+            <TextView style="@style/CoordinateNumber" android:text="8" tools:ignore="HardcodedText" />
+            <TextView style="@style/CoordinateNumber" android:text="7" tools:ignore="HardcodedText" />
+            <TextView style="@style/CoordinateNumber" android:text="6" tools:ignore="HardcodedText" />
+            <TextView style="@style/CoordinateNumber" android:text="5" tools:ignore="HardcodedText" />
+            <TextView style="@style/CoordinateNumber" android:text="4" tools:ignore="HardcodedText" />
+            <TextView style="@style/CoordinateNumber" android:text="3" tools:ignore="HardcodedText" />
+            <TextView style="@style/CoordinateNumber" android:text="2" tools:ignore="HardcodedText" />
+            <TextView style="@style/CoordinateNumber" android:text="1" tools:ignore="HardcodedText" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/rightNumbers"
+            style="@style/CoordinateBar.Vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/boardHolder"
+            app:layout_constraintBottom_toBottomOf="@id/boardHolder">
+
+            <TextView style="@style/CoordinateNumber" android:text="8" tools:ignore="HardcodedText" />
+            <TextView style="@style/CoordinateNumber" android:text="7" tools:ignore="HardcodedText" />
+            <TextView style="@style/CoordinateNumber" android:text="6" tools:ignore="HardcodedText" />
+            <TextView style="@style/CoordinateNumber" android:text="5" tools:ignore="HardcodedText" />
+            <TextView style="@style/CoordinateNumber" android:text="4" tools:ignore="HardcodedText" />
+            <TextView style="@style/CoordinateNumber" android:text="3" tools:ignore="HardcodedText" />
+            <TextView style="@style/CoordinateNumber" android:text="2" tools:ignore="HardcodedText" />
+            <TextView style="@style/CoordinateNumber" android:text="1" tools:ignore="HardcodedText" />
+        </LinearLayout>
+
+        <FrameLayout
+            android:id="@+id/boardHolder"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintEnd_toStartOf="@id/rightNumbers"
+            app:layout_constraintStart_toEndOf="@id/leftNumbers"
+            app:layout_constraintTop_toBottomOf="@id/topLetters"
+            app:layout_constraintBottom_toTopOf="@id/bottomLetters">
+
+            <TableLayout
+                android:id="@+id/tableBoard"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:shrinkColumns="*"
+                android:stretchColumns="*" />
+
+        </FrameLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvMoveHistory"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_below="@id/board_container"
+        android:layout_above="@id/self_profile"
+        android:padding="8dp"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        tools:listitem="@layout/list_item_move" />
+
+    <LinearLayout
+        android:id="@+id/self_profile"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/bottom_controls"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:padding="8dp">
+
+        <ImageView
+            android:id="@+id/self_avatar"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/ic_launcher_foreground"
+            tools:ignore="ContentDescription" />
+
+        <ImageView
+            android:id="@+id/self_flag"
+            android:layout_width="24dp"
+            android:layout_height="16dp"
+            android:layout_marginStart="-12dp"
+            android:layout_marginTop="12dp"
+            tools:src="@drawable/ic_settings_24"
+            tools:ignore="ContentDescription" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/self_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="@style/TextAppearance.Material3.BodyLarge"
+                tools:text="You (1100)" />
+
+            <TextView
+                android:id="@+id/self_captured_pieces"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="@style/TextAppearance.Material3.BodySmall"
+                tools:text="♙♖" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/bottom_controls"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:padding="4dp">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_hint"
+            style="?attr/materialIconButtonStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:icon="@drawable/ic_click_h"
+            tools:ignore="SpeakableTextPresentCheck" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_undo"
+            style="?attr/materialIconButtonStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:icon="@drawable/ic_undo_24" 
+            tools:ignore="SpeakableTextPresentCheck" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_restart"
+            style="?attr/materialIconButtonStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:icon="@drawable/ic_restart_24" 
+            tools:ignore="SpeakableTextPresentCheck" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_draw"
+            style="?attr/materialIconButtonStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:icon="@drawable/handshake_outline"
+            tools:ignore="SpeakableTextPresentCheck" />
+
+    </LinearLayout>
+
+</RelativeLayout>

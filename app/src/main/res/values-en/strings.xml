@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">ChessLab</string>
+
+    <!-- Common -->
+    <string name="ok">OK</string>
+    <string name="email_hint">Email</string>
+    <string name="password_hint">Password</string>
+
+    <string name="menu_rules">Rules</string>
+    <string name="menu_about">About</string>
+
+    <string name="menu_theme">Theme</string>
+    <string name="menu_theme_light">Light</string>
+    <string name="menu_theme_dark">Dark</string>
+
+    <string name="menu_theme_with_value">Theme: %1$s</string>
+
+    <string name="menu_language">Language</string>
+    <string name="menu_lang_ru">Русский</string>
+    <string name="menu_lang_en">English</string>
+
+    <string name="menu_language_with_value">Language: %1$s</string>
+
+
+    <string name="dialog_rules_title">How to Not Lose at Chess? 🤔</string>
+    <string name="dialog_rules_body">The goal is to trap the opponent\'s king (not in a garage).\n\n
+• Pawn: The hardest worker. Moves forward, captures diagonally. If it reaches the end, it can become anyone (except a sales manager).\n
+• Rook: Like a tank, but only in straight lines.\n
+• Bishop: Moves diagonally. Always knows where the truth is.\n
+• Knight: Jumps in an “L” shape and ignores the rules (of all other pieces).\n
+• Queen: The universal soldier. Moves both straight and diagonally.\n
+• King: The main guy, but only moves one square. Apparently, his bodyguards can\'t keep up everywhere.\n\n
+Castling: Like a backup. Move your king and rook to be safer.\n
+En Passant: When a pawn moves past, but you can still capture it.\n\n
+To make a move, click on a piece, then on a square. Good luck, grandmaster! 😉</string>
+    <string name="dialog_about_title">About the App and Its Mysterious Creator 🧙‍♂️</string>
+    <string name="dialog_about_body">
+Version %1$s\n\n
+Author: Harutyunyan Rafael\n
+Student of KubSU, Faculty of CTaPM\n
+Group: FI-42/2\n\n
+This app is the result of sleepless nights,\n
+cups of coffee, and attempts to understand how to make a UI look beautiful.\n\n
+But it works! (Probably.)\n
+If it breaks, it\'s a feature, not a bug. 🐛\n\n
+— Sincerely, a programmer who still doesn\'t know what `FLAG_BLUR_BEHIND` is 😄
+</string>
+
+    <string name="welcome_title">Welcome to ChessLab!</string>
+    <string name="welcome_body">
+⚠️ Warning: chess can be addictive!\n\n
+ 👤 Log in — and we\'ll know who to watch\n
+ 🆕 Register — and get an "official" status as a chess fighter\n
+ 👻 Or stay as a guest — we\'re glad to have you anyway
+</string>
+    <string name="welcome_btn_login">Log In</string>
+    <string name="welcome_btn_register">Create Account</string>
+    <string name="welcome_btn_guest">Play as Guest</string>
+
+
+
+    <string name="main_toolbar_title">Care for a game?</string>
+
+    <string name="menu_settings">Settings</string>
+
+    <string name="login_auth_error">Invalid login or password</string>
+
+    <string name="start_game">Start game</string>
+    <string name="main_mode_bot">Play with Bot</string>
+    <string name="main_mode_friend">Play with Friend</string>
+    <string name="main_mode_online">Online Mode</string>
+    <string name="main_label_board">Board:</string>
+    <string name="main_rating">Player Rating</string>
+    <string name="main_label_pieces">Mode:</string>
+    <string name="main_button_restart">Restart</string>
+    <string name="text_stats">Games played today: %d</string>
+    <string name="text_stat">Online now: %d (demo)</string>
+    <string name="login_button">Log In</string>
+    <string name="login_form_error">Please check your input</string>
+    <string name="login_email_hint">Email</string>
+    <string name="login_password_hint">Password</string>
+    <string name="login_no_account"><u>No account? Register</u></string>
+    <string name="login_error_format">Invalid email format</string>
+    <string name="login_error_credentials">Invalid credentials</string>
+    <string name="login_error_empty_email">Enter your email</string>
+    <string name="login_error_empty_password">Enter your password</string>
+    <string name="login_success">You have successfully logged in</string>
+
+    <!-- Register -->
+    <string name="register_username_hint">Username</string>
+    <string name="register_password_hint">Password</string>
+    <string name="register_password_confirm_hint">Confirm password</string>
+
+    <string name="register_have_account"><u>Already have an account?</u></string>
+    <string name="register_passwords_dont_match">Passwords do not match</string>
+
+    <!-- RegisterActivity: validation errors -->
+    <string name="error_enter_name">Enter your name</string>
+    <string name="error_enter_email">Enter your email</string>
+    <string name="error_bad_email">Invalid email format</string>
+
+    <string name="error_pass_len">Minimum 8 characters</string>
+    <string name="error_pass_lower">A lowercase letter is required</string>
+    <string name="error_pass_upper">An UPPERCASE letter is required</string>
+    <string name="error_pass_digit">A digit is required</string>
+    <string name="error_pass_special">A special character is required (%1$s)</string>
+
+    <string name="register_button">Create Account</string>
+    <string name="register_name_hint">Name</string>
+    <string name="register_name_helper">This name will be visible to other players</string>
+    <string name="register_password_helper">Use 8+ characters, with an uppercase &amp; lowercase letter, a digit, and a special symbol</string>
+    <string name="register_password_empty_helper">\u0020</string>
+    <string name="register_error_empty_name">Enter your name</string>
+    <string name="register_error_empty_confirm">Confirm your password</string>
+    <string name="register_error_passwords_mismatch">Passwords do not match</string>
+    <string name="register_error_email_exists">This email is already taken</string>
+    <string name="register_error_save">Error while saving</string>
+    <string name="register_success">Account created successfully</string>
+    <string name="password_strength_needed">Password does not meet requirements</string>
+    <string name="register_password_requirements">Password requirements:</string>
+    <string name="register_password_need_min_length">Minimum 8 characters</string>
+    <string name="register_password_need_uppercase">1 uppercase letter</string>
+    <string name="register_password_need_lowercase">1 lowercase letter</string>
+    <string name="register_password_need_digit">1 digit</string>
+    <string name="register_password_need_special">1 special symbol</string>
+    <string name="register_password_need_uppercase_short">A-Z</string>
+    <string name="register_password_need_lowercase_short">a-z</string>
+    <string name="register_password_need_digit_short">0-9</string>
+    <string name="register_password_need_special_short">\@#$</string>
+    <string name="register_password_ok">Excellent password</string>
+    <string name="title_activity_settings">Settings</string>
+
+    <string-array name="country_entries">
+        <item>Russia</item>
+        <item>USA</item>
+        <item>Great Britain</item>
+        <item>Germany</item>
+        <item>France</item>
+    </string-array>
+
+    <string name="settings_name">Username</string>
+    <string name="settings_names">Profile</string>
+    <string name="settings_from">Country</string>
+    <string name="settings_avatar">Choose Avatar</string>
+    <string name="settings_text_avatar">Click to change image</string>
+    <string name="settings_voic">Sound</string>
+    <string name="settings_voiic">Background music</string>
+    <string name="settings_voiicc">Move sounds</string>
+    <string name="settings_mode">Appearance</string>
+    <string name="settings_theme">App theme</string>
+    <string name="settings_lounge">Language</string>
+    <string name="settings_style_dos">Board style</string>
+    <string name="settings_play_proc">Gameplay</string>
+    <string name="settings_play_time">Timed game</string>
+    <string name="settings_show_coordinates">Show coordinates</string>
+
+    <string-array name="country_values">
+        <item>ru</item>
+        <item>us</item>
+        <item>gb</item>
+        <item>de</item>
+        <item>fr</item>
+    </string-array>
+
+    <!-- Game Screen -->
+    <string name="menu_save_game">Save</string>
+    <string name="menu_exit_to_menu">Exit to Menu</string>
+    <string name="menu_return_to_game">Return to Game</string>
+    <string name="btn_hint_description">Hint</string>
+    <string name="btn_undo_description">Undo Move</string>
+    <string name="btn_restart_description">Restart</string>
+    <string name="btn_draw_description">Offer Draw</string>
+    <string name="dialog_pause_title">Paused</string>
+    <string name="dialog_pause_message">Do you want to exit the game?</string>
+
+    <string name="toast_hint_soon">Hints will be available soon!</string>
+    <string name="toast_undo_soon">Undo move will be available soon!</string>
+    <string name="toast_draw_soon">Offering a draw will be available soon!</string>
+    <string name="toast_save_soon">Saving the game will be available soon!</string>
+    <string name="invalid_move">Invalid move</string>
+    <string name="check">Check!</string>
+
+    <string name="pawn_promotion_title">Pawn Promotion</string>
+    <string-array name="promotion_piece_names">
+        <item>Queen</item>
+        <item>Rook</item>
+        <item>Bishop</item>
+        <item>Knight</item>
+    </string-array>
+
+    <string name="game_over_checkmate_title">Checkmate!</string>
+    <string name="game_over_checkmate_white_wins">White wins.</string>
+    <string name="game_over_checkmate_black_wins">Black wins.</string>
+    <string name="game_over_stalemate_title">Stalemate!</string>
+    <string name="game_over_stalemate_body">Draw.</string>
+    <string name="game_over_new_game">New Game</string>
+    <string name="game_over_exit_menu">Exit to Menu</string>
+
+    <string name="logout_dialog_title">Log out?</string>
+    <string name="online_mode_dialog_title">Online Mode</string>
+    <string name="online_mode_dialog_message">Online play will be available later. Currently, you can play vs. Bot or vs. Friend.</string>
+    <string name="guest_user_name">Guest</string>
+    <string name="contact_author_subject">Feedback on ChessLab</string>
+    <string name="no_email_app_found">No email app found</string>
+    <string name="main_contact_author">Contact Author</string>
+
+    <string name="settings_profile_disabled_summary">Log in to edit your profile</string>
+    <string name="rating_title">Player Rating</string>
+    <string name="game_history_title">Game History</string>
+    <string name="opponent">Opponent</string>
+    <string name="result">Result</string>
+    <string name="date">Date</string>
+    <string name="continue_game">Continue</string>
+    <string name="game_saved">Game saved</string>
+    <string name="background_image_description">Background</string>
+
+    <string name="new_game_warning_title">New Game?</string>
+    <string name="new_game_warning_message">Starting a new game will overwrite your saved game. Are you sure?</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+
+</resources>
