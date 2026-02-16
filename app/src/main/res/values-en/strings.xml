@@ -177,6 +177,13 @@ If it breaks, it\'s a feature, not a bug. 🐛\n\n
     <string name="toast_hint_soon">Hints will be available soon!</string>
     <string name="toast_undo_soon">Undo move will be available soon!</string>
     <string name="toast_draw_soon">Offering a draw will be available soon!</string>
+    <string name="hint_no_moves">No legal moves for a hint</string>
+    <string name="hint_best_move">Hint: %1$s</string>
+    <string name="undo_nothing_to_undo">Nothing to undo</string>
+    <string name="undo_done">Last move was undone</string>
+    <string name="draw_offer_title">Draw Offer</string>
+    <string name="draw_offer_message">Accept a draw?</string>
+    <string name="draw_declined">Opponent declined the draw</string>
     <string name="toast_save_soon">Saving the game will be available soon!</string>
     <string name="invalid_move">Invalid move</string>
     <string name="check">Check!</string>
