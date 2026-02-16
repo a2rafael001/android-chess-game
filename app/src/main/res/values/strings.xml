@@ -181,6 +181,13 @@
     <string name="toast_hint_soon">Подсказки появятся скоро!</string>
     <string name="toast_undo_soon">Отмена хода появится скоро!</string>
     <string name="toast_draw_soon">Предложение ничьей появится скоро!</string>
+    <string name="hint_no_moves">Нет доступных ходов для подсказки</string>
+    <string name="hint_best_move">Подсказка: %1$s</string>
+    <string name="undo_nothing_to_undo">Нет ходов для отмены</string>
+    <string name="undo_done">Последний ход отменён</string>
+    <string name="draw_offer_title">Предложение ничьей</string>
+    <string name="draw_offer_message">Согласиться на ничью?</string>
+    <string name="draw_declined">Соперник отклонил ничью</string>
     <string name="toast_save_soon">Сохранение игры появится скоро!</string>
     <string name="invalid_move">Неверный ход</string>
     <string name="check">Шах!</string>
