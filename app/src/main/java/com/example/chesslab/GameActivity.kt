@@ -576,6 +576,17 @@ class GameActivity : AppCompatActivity() {
             if (isWhitePieceRes(resId) != byWhite) return@any false
             isPieceAttackingSquare(r, c, targetRow, targetCol, resId)
         }
+        return true
+    }
+
+    private fun isKingInCheck(isWhiteKing: Boolean): Boolean {
+        val kingResId = if (isWhiteKing) R.drawable.piece_w_king else R.drawable.piece_b_king
+        val kingPos = (0..63)
+            .find { (cellAt(it / 8, it % 8).tag as? Int) == kingResId }
+            ?.let { it / 8 to it % 8 }
+            ?: return true
+
+        return isSquareAttacked(kingPos.first, kingPos.second, !isWhiteKing)
     }
 
     private fun isPieceAttackingSquare(fromRow: Int, fromCol: Int, targetRow: Int, targetCol: Int, pieceResId: Int): Boolean {
@@ -1122,6 +1133,26 @@ class GameActivity : AppCompatActivity() {
 
     private fun pieceValue(resId: Int): Int {
         return ChessHeuristics.pieceValue(resources.getResourceEntryName(resId))
+        return moves.maxByOrNull { move ->
+            val movingPiece = cellAt(move.fromRow, move.fromCol).tag as Int
+            val captured = cellAt(move.toRow, move.toCol).tag as? Int
+            val captureScore = captured?.let { pieceValue(it) } ?: 0
+            val movingPenalty = pieceValue(movingPiece) / 10
+            val centerBonus = if (move.toRow in 2..5 && move.toCol in 2..5) 1 else 0
+            captureScore + centerBonus - movingPenalty
+        }
+    }
+
+    private fun pieceValue(resId: Int): Int {
+        val name = resources.getResourceEntryName(resId)
+        return when {
+            name.endsWith("pawn") -> 1
+            name.endsWith("knight") || name.endsWith("bishop") -> 3
+            name.endsWith("rook") -> 5
+            name.endsWith("queen") -> 9
+            name.endsWith("king") -> 100
+            else -> 0
+        }
     }
 
     private fun isWhitePieceRes(resId: Int): Boolean {
