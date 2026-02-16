@@ -371,16 +371,8 @@ class GameActivity : AppCompatActivity() {
     }
 
     private fun makeBotMove() {
-        val possibleMoves = allLegalMoves(false)
-        val captureMoves = possibleMoves.filter { move ->
-            val toTag = cellAt(move.toRow, move.toCol).tag as? Int
-            val movingPiece = cellAt(move.fromRow, move.fromCol).tag as? Int
-            val movingName = movingPiece?.let { resources.getResourceEntryName(it) }
-            toTag != null || (movingName?.endsWith("pawn") == true && move.fromCol != move.toCol && enPassantTarget == (move.toRow to move.toCol))
-        }
-
-        val move = (captureMoves.ifEmpty { possibleMoves }).randomOrNull()
-        move?.let {
+        val bestMove = findBestMove(false)
+        bestMove?.let {
             pushUndoSnapshot()
             movePiece(it.fromRow, it.fromCol, it.toRow, it.toCol)
         }
@@ -584,6 +576,17 @@ class GameActivity : AppCompatActivity() {
             if (isWhitePieceRes(resId) != byWhite) return@any false
             isPieceAttackingSquare(r, c, targetRow, targetCol, resId)
         }
+        return true
+    }
+
+    private fun isKingInCheck(isWhiteKing: Boolean): Boolean {
+        val kingResId = if (isWhiteKing) R.drawable.piece_w_king else R.drawable.piece_b_king
+        val kingPos = (0..63)
+            .find { (cellAt(it / 8, it % 8).tag as? Int) == kingResId }
+            ?.let { it / 8 to it % 8 }
+            ?: return true
+
+        return isSquareAttacked(kingPos.first, kingPos.second, !isWhiteKing)
     }
 
     private fun isPieceAttackingSquare(fromRow: Int, fromCol: Int, targetRow: Int, targetCol: Int, pieceResId: Int): Boolean {
@@ -1053,6 +1056,83 @@ class GameActivity : AppCompatActivity() {
         val moves = allLegalMoves(forWhite)
         if (moves.isEmpty()) return null
 
+        val scored = moves.map { it to evaluateCandidateMove(it, forWhite) }
+        val bestScore = scored.maxOf { it.second }
+        val topMoves = scored.filter { it.second == bestScore }.map { it.first }
+        return topMoves.randomOrNull()
+    }
+
+    private fun evaluateCandidateMove(move: CandidateMove, movingWhite: Boolean): Int {
+        val fromCell = cellAt(move.fromRow, move.fromCol)
+        val toCell = cellAt(move.toRow, move.toCol)
+        val movingResId = fromCell.tag as? Int ?: return Int.MIN_VALUE
+        val movingName = resources.getResourceEntryName(movingResId)
+
+        val wasEnPassantCapture = movingName.endsWith("pawn") && toCell.tag == null && move.fromCol != move.toCol && enPassantTarget == (move.toRow to move.toCol)
+        val capturedRes = if (wasEnPassantCapture) cellAt(move.fromRow, move.toCol).tag as? Int else toCell.tag as? Int
+
+        val oldFrom = fromCell.tag
+        val oldTo = toCell.tag
+
+        var enPassantCapturedCell: ImageView? = null
+        var enPassantCapturedOldTag: Any? = null
+        if (wasEnPassantCapture) {
+            enPassantCapturedCell = cellAt(move.fromRow, move.toCol)
+            enPassantCapturedOldTag = enPassantCapturedCell.tag
+            enPassantCapturedCell.tag = null
+        }
+
+        var rookFromCell: ImageView? = null
+        var rookToCell: ImageView? = null
+        var rookFromOldTag: Any? = null
+        var rookToOldTag: Any? = null
+        if (movingName.endsWith("king") && abs(move.toCol - move.fromCol) == 2) {
+            if (move.toCol == 6) {
+                rookFromCell = cellAt(move.fromRow, 7)
+                rookToCell = cellAt(move.fromRow, 5)
+            } else if (move.toCol == 2) {
+                rookFromCell = cellAt(move.fromRow, 0)
+                rookToCell = cellAt(move.fromRow, 3)
+            }
+            if (rookFromCell != null && rookToCell != null) {
+                rookFromOldTag = rookFromCell.tag
+                rookToOldTag = rookToCell.tag
+                rookToCell.tag = rookFromCell.tag
+                rookFromCell.tag = null
+            }
+        }
+
+        toCell.tag = oldFrom
+        fromCell.tag = null
+
+        val givesCheck = isKingInCheck(!movingWhite)
+        val isPromotion = movingName.endsWith("pawn") && (if (movingWhite) move.toRow == 0 else move.toRow == 7)
+        val destinationAttacked = isSquareAttacked(move.toRow, move.toCol, !movingWhite)
+
+        fromCell.tag = oldFrom
+        toCell.tag = oldTo
+        if (enPassantCapturedCell != null) enPassantCapturedCell.tag = enPassantCapturedOldTag
+        if (rookFromCell != null && rookToCell != null) {
+            rookFromCell.tag = rookFromOldTag
+            rookToCell.tag = rookToOldTag
+        }
+
+        val movingValue = pieceValue(movingResId)
+        val captureValue = capturedRes?.let { pieceValue(it) } ?: 0
+
+        return ChessHeuristics.moveScore(
+            captureValue = captureValue,
+            givesCheck = givesCheck,
+            isPromotion = isPromotion,
+            toRow = move.toRow,
+            toCol = move.toCol,
+            isDestinationAttacked = destinationAttacked,
+            movingPieceValue = movingValue
+        )
+    }
+
+    private fun pieceValue(resId: Int): Int {
+        return ChessHeuristics.pieceValue(resources.getResourceEntryName(resId))
         return moves.maxByOrNull { move ->
             val movingPiece = cellAt(move.fromRow, move.fromCol).tag as Int
             val captured = cellAt(move.toRow, move.toCol).tag as? Int
